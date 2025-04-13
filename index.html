@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="titi" src="titi.glb"></a-asset-item>
+      </a-assets>
+
+      <!-- Modelo GLB -->
+      <a-gltf-model
+        src="#titi"
+        position="0 0 -2"
+        rotation="0 180 0"
+        scale="1 1 1"
+        animation-mixer>
+      </a-gltf-model>
+
+      <!-- Luces -->
+      <a-entity light="type: ambient; intensity: 1"></a-entity>
+      <a-entity light="type: directional; intensity: 1" position="2 4 -3"></a-entity>
+
+      <!-- Cámara con controles -->
+      <a-entity position="0 1.6 3">
+        <a-camera wasd-controls-enabled="true" look-controls-enabled="true"></a-camera>
+      </a-entity>
+
+      <!-- Cielo -->
+      <a-sky color="#3b78ca"></a-sky>
+    </a-scene>
+  </body>
+</html>
